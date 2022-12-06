@@ -1,4 +1,50 @@
+
+
 #logo {
     display: flex;
     width: 15%;
 }
+.cards {
+    list-style: none;
+}
+.card {
+    margin: 1rem;
+    text-align:center;
+  
+}
+  
+.card img {
+    width: 100%;
+    border-radius: 15px;
+    background: #94f30e;
+    padding: 5px;
+    width: 200px;
+    height: 150px;
+}
+  
+.card button {
+    margin-top: 0.5rem;
+}
+@media (min-width: 768px) {
+    .cards {
+      display: flex;
+      flex-wrap: wrap;
+    }
+  
+    .card {
+      width: calc(33% - 2rem);
+    }
+  }
+  
+  @media (min-width: 1024px) {
+    .card {
+      width: calc(25% - 2rem);
+    }
+  }
+  
+  @media (min-width: 1200px) {
+    .card {
+      width: calc(20% - 2rem);
+    }
+  }
+  

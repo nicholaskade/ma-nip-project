@@ -4,19 +4,21 @@ import { NavLink } from "react-router-dom";
 function Header() {
   return (
     <div>
-        <header>
-            Hello, I am the Header!
+        <header className="header">
             <NavLink to="/" className="button">
-              <img id="logo" src={require("./fern-logo.png")}/>
+              <img id="logo" src={require("./fern-logo.png")} alt="logo"/>
             </NavLink>
             
             <nav>
-
-                <NavLink to="/about" className="button">
-                    About
+            <NavLink to="/Home" className="button">
+                    Home
                 </NavLink>
 
-                <NavLink to="/shopplants" className="button">
+                <NavLink to="/About" className="button">
+                    About
+                </NavLink>
+                <br></br>
+                <NavLink to="/PlantList" className="button">
                     Shop Plants
                 </NavLink>
 
