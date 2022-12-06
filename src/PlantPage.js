@@ -12,24 +12,13 @@ function PlantPage(){
         .then(plants => setPlants(plants))
     },[]);
 
-    
-
-
-
-
-
-
-
-
     return (
      <main>
         <PlantList
         plants={plants}
-        
-        
-        
         />
      </main>
     )
-}
+};
+
 export default PlantPage;
