@@ -1,16 +1,58 @@
+body {
+    margin: unset;
+}
 
+#header-container {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    box-shadow: 0 2px 4px grey;
+}
+
+.header {
+    width: 100%;
+    margin: 8px 8px;
+    display: flex; 
+    justify-content: space-between;
+}
+
+#nav-bar {
+    display: flex;
+    width: 85%;
+    order: 2;
+}
+
+nav {
+    display: flex;
+    flex-direction: row;
+    align-self: center;
+}
+
+.nav-link {
+    display: flex;
+    padding: 0 12px;
+    font-family: Bitter;
+    text-decoration: none;
+}
 
 #logo {
     display: flex;
-    width: 15%;
+    width: 10%;
+    align-self: flex-start;
 }
+
 .cards {
     list-style: none;
 }
+
 .card {
     margin: 1rem;
     text-align:center;
-  
+    font-family: Bitter;
+}
+
+.card p {
+    margin: 8px 0;
 }
   
 .card img {
@@ -25,6 +67,7 @@
 .card button {
     margin-top: 0.5rem;
 }
+
 @media (min-width: 768px) {
     .cards {
       display: flex;

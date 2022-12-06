@@ -1,14 +1,18 @@
 import React from 'react';
 
 function PlantCard({name, latinName, watering, image}) {
+    const titleStyle = {
+        fontSize: "x-large"
+    };
+
     return (
        <li className="card">
         <img src={image} image alt ={"plant name"}/>
-        <h1>{name}</h1>
-        <h4>{latinName}</h4>
+        <p style={titleStyle}>{name}</p>
+        <p>{latinName}</p>
         <div>
-        <h4>{watering}</h4>
-            <h2>💚</h2>
+            <p>{watering}</p>
+                <h2>💚</h2>
         </div>
        </li>
     )
