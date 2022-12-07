@@ -37,7 +37,7 @@ function LoginForm( {firebaseConfig, setUserId} ) {
 
   return <>
     {user ? 
-        <><p>Welcome, {user.uid}!</p><button onClick={() => signOut(auth)}>Google Logout</button></>
+        <><p>Welcome, {user.displayName}!</p><button onClick={() => signOut(auth)}>Google Logout</button></>
             : <><p>Enjoy</p>
         <button onClick={() =>  signInWithPopup(auth, provider)
             .then((result) => {

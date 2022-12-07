@@ -1,29 +1,29 @@
 import React from "react";
 import LoginForm from "./LoginForm";
-import {useState} from "react";
-import PlantCard from "./PlantCard";
+import {useState, useEffect} from "react";
+import MyPlants from "./MyPlants";
 
-function Home( { firebaseConfig, setUserId, userId, likedPlants, setLikedPlants } ) {
-  console.log(likedPlants);
-  // const likedPlantCards = likedPlants.map((plant) => {
-  //   return (
-  //     <PlantCard 
-  //     key={plant.id}
-  //     id={plant.id}
-  //     name={plant.name}
-  //     latinName={plant.latinName}
-  //     watering={plant.watering}
-  //     image={plant.image}
-  //     userId={userId}
-  //     setLikedPlants={setLikedPlants}
-  //     />
-  //   )
-  // });
+function Home( { firebaseConfig, setUserId, userId} ) {
+  const [myPlants, setMyPlants] = useState([])
+
+    useEffect(() => {
+    fetch(`http://localhost:5555/${userId}`)
+    .then(resp => resp.json())
+    .then(myPlants => setMyPlants(myPlants))
+    }, []);
+
+  // function checkDatabaseForUser(){
+  //   fetch(`http://localhost:5555/`)
+  //   .then(res => res.json())
+  //   .then(res => console.log(res))
+  // }
+
+  // checkDatabaseForUser();
 
   return (
     <div>
        <LoginForm firebaseConfig={firebaseConfig} setUserId={setUserId}/>
-       {/* {likedPlantCards} */}
+       <MyPlants myPlants={myPlants} userId={userId}/>
       <h1>Home!</h1>
     </div>
   )
