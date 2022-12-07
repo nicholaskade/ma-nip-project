@@ -51,6 +51,7 @@ nav {
     text-align:center;
     font-family: Bitter;
     box-shadow: 6px 6px 8px grey;
+    position: relative;
 }
 
 .card p {
@@ -59,10 +60,21 @@ nav {
   
 .card img {
     padding: 5px;
+    z-index: 1;
+    position: relative;
 }
   
 .card button {
     margin-top: 0.5rem;
+    z-index: 2;
+    position: absolute;
+    top: 1%;
+    right: 8%;
+    background: none;
+    border: none;
+    font-size: x-large;
+    font-family: Verdana;
+    color: red;
 }
 
 @media (min-width: 630px) {

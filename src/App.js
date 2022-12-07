@@ -17,7 +17,8 @@ const firebaseConfig = {
 };
 
 function App() {
-  const [userId, setUserId] = useState("");
+  const [userId, setUserId] = useState("default");
+  const [likedPlants, setLikedPlants] = useState([]);
 
   return (
     <div className="App">
@@ -29,11 +30,11 @@ function App() {
                 </Route>
                     
                 <Route path="/PlantPage"> 
-                  <PlantPage userId={userId}/>
+                  <PlantPage userId={userId} setLikedPlants={setLikedPlants} likedPlants={likedPlants}/>
                 </Route>
 
                 <Route path="/">
-                  <Home firebaseConfig={firebaseConfig} setUserId={setUserId}/>
+                  <Home firebaseConfig={firebaseConfig} setUserId={setUserId} userId={userId} setLikedPlants={setLikedPlants} likedPlants={likedPlants}/>
                 </Route>
                 
             </Switch>

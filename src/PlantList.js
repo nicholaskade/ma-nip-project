@@ -1,7 +1,7 @@
 import React from 'react';
 import PlantCard from './PlantCard';
 
-function PlantList({ plants, userId }){
+function PlantList({ plants, userId, likedPlants, setLikedPlants }){
     const housePlants = plants.map((housePlants) => {
         if (housePlants['Common name'] !== null) {
             return <PlantCard
@@ -11,7 +11,10 @@ function PlantList({ plants, userId }){
                 climate= {housePlants.climate}
                 image={housePlants.img}
                 watering={housePlants.Watering}
+                id={housePlants.id}
                 userId={userId}
+                setLikedPlants={setLikedPlants} 
+                likedPlants={likedPlants}
             />
         };
     });

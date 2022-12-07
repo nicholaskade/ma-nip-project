@@ -1,10 +1,11 @@
 import React,{ useState } from 'react';
 
-function PlantCard( { name, latinName, watering, image, userId} ) {
+function PlantCard( { name, latinName, watering, image, userId, id, setLikedPlants, likedPlants } ) {
     
-    const [likedPlants, setLikedPlants] = useState([])
+    const [liked, setLiked] = useState(false);
 
     let currentPlant = {
+        id: id,
         name: name,
         latinName: latinName,
         watering: watering,
@@ -17,18 +18,36 @@ function PlantCard( { name, latinName, watering, image, userId} ) {
  
     function handleLiked(e){
         e.preventDefault();
-    
-        let postRequest = {
-            method:'Post',
-            headers: {
-                'Content-Type': 'application/json',
-                'Accept': 'application/json',
-                },
-                body: JSON.stringify(currentPlant)
-            }
-        fetch(`http://localhost:5555/${userId}`, postRequest)
-        .then(res => res.json())
-        .then(plantData => console.log(plantData))
+        if (liked === false) {
+            let postRequest = {
+                method:'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Accept': 'application/json',
+                    },
+                    body: JSON.stringify(currentPlant)
+                }
+            fetch(`http://localhost:5555/${userId}`, postRequest)
+            .then(res => res.json())
+            .then(res => setLikedPlants([...likedPlants, res]))
+            setLiked(!liked);
+        } else {
+            let deleteRequest = {
+                method: 'DELETE',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Accept': 'application/json'
+                }
+            };
+            
+            fetch(`http://localhost:5555/${userId}/${id}`, deleteRequest)
+            .then(res => res.json())
+            .then(res => {
+                let newPlants = likedPlants.filter((plants) => plants.id !== id);
+                setLikedPlants(newPlants);
+            })
+            setLiked(!liked);
+        }
     };
 
     return (
@@ -36,10 +55,8 @@ function PlantCard( { name, latinName, watering, image, userId} ) {
             <img src={image} image alt ={"plant name"}/>
             <p style={titleStyle}>{name}</p>
             <p>{latinName}</p>
-            <div>
-                <p>{watering}</p>
-                <button onClick={(e) => handleLiked(e)}>💚</button>
-            </div>
+            <p>{watering}</p>
+            <button id={id} onClick={(e) => handleLiked(e)}>{liked ? "♥" : "♡"}</button>
        </div>
     )
 };
