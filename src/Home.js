@@ -3,22 +3,17 @@ import LoginForm from "./LoginForm";
 import {useState, useEffect} from "react";
 import MyPlants from "./MyPlants";
 
-function Home( { firebaseConfig, setUserId, userId} ) {
-  const [myPlants, setMyPlants] = useState([])
+function Home( { firebaseConfig, setUserId, userId } ) {
+  
+  const [myPlants, setMyPlants] = useState([]);
 
-    useEffect(() => {
-    fetch(`http://localhost:5555/${userId}`)
-    .then(resp => resp.json())
-    .then(myPlants => setMyPlants(myPlants))
-    }, []);
-
-  // function checkDatabaseForUser(){
-  //   fetch(`http://localhost:5555/`)
-  //   .then(res => res.json())
-  //   .then(res => console.log(res))
-  // }
-
-  // checkDatabaseForUser();
+  // useEffect(() => {
+  //   if (userId !== "default") {
+  //     fetch(`http://localhost:3002/users`)
+  //     .then(res => res.json())
+  //     .then(res => setMyPlants(res))
+  //   }
+  // }, []);
 
   return (
     <div>

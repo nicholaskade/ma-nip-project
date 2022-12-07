@@ -1,6 +1,8 @@
 import React,{ useState } from 'react';
 
-function PlantCard( { name, latinName, watering, image, userId, id, setLikedPlants, likedPlants } ) {
+function PlantCard( { name, latinName, watering, image, userId, id, setLikedPlants, likedPlants, k } ) {
+
+    console.log(userId);
     
     const [liked, setLiked] = useState(false);
 
@@ -25,12 +27,16 @@ function PlantCard( { name, latinName, watering, image, userId, id, setLikedPlan
                     'Content-Type': 'application/json',
                     'Accept': 'application/json',
                     },
-                    body: JSON.stringify(currentPlant)
+                    body: JSON.stringify({
+                        "id": userId+id,
+                        "plant": currentPlant
+                    })
                 }
-            fetch(`http://localhost:5555/${userId}`, postRequest)
+            fetch(`http://localhost:3002/favorites`, postRequest)
             .then(res => res.json())
-            .then(res => setLikedPlants([...likedPlants, res]))
+            .then(res => console.log(res))
             setLiked(!liked);
+
         } else {
             let deleteRequest = {
                 method: 'DELETE',
@@ -40,11 +46,10 @@ function PlantCard( { name, latinName, watering, image, userId, id, setLikedPlan
                 }
             };
             
-            fetch(`http://localhost:5555/${userId}/${id}`, deleteRequest)
+            fetch(`http://localhost:3002/favorites/${userId+id}`, deleteRequest)
             .then(res => res.json())
             .then(res => {
-                let newPlants = likedPlants.filter((plants) => plants.id !== id);
-                setLikedPlants(newPlants);
+                console.log(res);
             })
             setLiked(!liked);
         }
@@ -52,7 +57,7 @@ function PlantCard( { name, latinName, watering, image, userId, id, setLikedPlan
 
     return (
         <div className="card">
-            <img src={image} image alt ={"plant name"}/>
+            <img src={image} alt={name}/>
             <p style={titleStyle}>{name}</p>
             <p>{latinName}</p>
             <p>{watering}</p>

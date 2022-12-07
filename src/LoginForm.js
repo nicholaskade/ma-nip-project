@@ -18,13 +18,19 @@ function LoginForm( {firebaseConfig, setUserId} ) {
     });
     const auth = getAuth(firebaseApp);
 
-  const [user, setUser] = useState(null)
+  const [user, setUser] = useState(null);
+  const [activeUsers, setActiveUsers] = useState([]);
+
   onAuthStateChanged(auth, (user) => {
           if (user) {
             // User is signed in, see docs for a list of available properties
             // https://firebase.google.com/docs/reference/js/firebase.User
             setUser(user);
             setUserId(user.uid);
+
+            fetch(`http://localhost:3002/users`)
+            .then(res => res.json())
+            .then(userData => setActiveUsers(userData))
             // ...
           } else {
             // User is signed out
@@ -32,7 +38,7 @@ function LoginForm( {firebaseConfig, setUserId} ) {
             setUser(null);
             setUserId("");
             }
-          }
+            }
         );
 
   return <>

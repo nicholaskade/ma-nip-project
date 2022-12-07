@@ -17,7 +17,7 @@ const firebaseConfig = {
 };
 
 function App() {
-  const [userId, setUserId] = useState("default");
+  const [userId, setUserId] = useState("");
   const [likedPlants, setLikedPlants] = useState([]);
 
   return (
