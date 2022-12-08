@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from 'react'
+import { unstable_batchedUpdates } from 'react-dom';
 import './App.css';
 
 function LoginForm( { 
   // firebaseConfig, 
-  // userId, 
+  userId, 
   // setLikedPlants, 
   // likedPlants, 
   setUserId, 
@@ -25,15 +26,18 @@ function LoginForm( {
         .then(userData => activeUsers = userData)
 
         onAuthStateChanged(auth, (user) => {
-          if (user) {
-            setUser(user);
-            setUserId(user.uid);
-            checkUserInfo(user.uid);
-          } else {
-            setUser(null);
-            setUserId("");
-          };
-        });
+            if (user) {
+              unstable_batchedUpdates(() => {
+                setUser(user);
+                setUserId(user.uid);
+                checkUserInfo(user.uid);
+                console.log(user.uid);
+              });
+            } else {
+              setUser(null);
+              setUserId("");
+            };
+          });
       };
       getUsers();
     }, [])
@@ -62,11 +66,12 @@ function LoginForm( {
       }
     };
 
-  return  <div className="login">
+  return  (
+  <div className="login">
   {user ? 
       <><p>Welcome, {user.displayName}!</p><button onClick={() => signOut(auth)}>Google Logout</button></>
           : <><p>Sign-In!</p>
-      <button className="Login"onClick={() =>  signInWithPopup(auth, provider)
+      <button onClick={() =>  signInWithPopup(auth, provider)
           .then((result) => {
           // The signed-in user info.
           // eslint-disable-next-line
@@ -90,7 +95,7 @@ function LoginForm( {
           </button>
       </>}
       </div>
-
+  )
 };
 
 export default LoginForm;

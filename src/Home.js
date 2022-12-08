@@ -20,21 +20,26 @@ function Home( {
   
 
   return (
-    <div class="homepage">
-      <h2 class="h2">Wishing You<br></br> a Fern-TASTIC <br></br> Holiday Season </h2>
-       <LoginForm 
-       firebaseConfig={firebaseConfig} 
-       setUserId={setUserId}
-       setLikedPlants={setLikedPlants} 
-       likedPlants={likedPlants}
-       onAuthStateChanged={onAuthStateChanged}
-       user={user}
-       setUser={setUser}
-       auth={auth}
-       signInWithPopup={signInWithPopup}
-       signOut={signOut}
-       provider={provider}/>
-       <img src={require('./christmas-cactus-snoopy.gif')} class ="home-gif" alt="my-gif" />
+    <div className="homepage">
+      <LoginForm 
+        firebaseConfig={firebaseConfig} 
+        setUserId={setUserId}
+        setLikedPlants={setLikedPlants} 
+        likedPlants={likedPlants}
+        onAuthStateChanged={onAuthStateChanged}
+        user={user}
+        setUser={setUser}
+        auth={auth}
+        signInWithPopup={signInWithPopup}
+        signOut={signOut}
+        provider={provider}
+      />
+      <h2 className="h2">wishing you and yours<br></br> A FERN-TASTIC <br></br> holiday season <br></br>🍃</h2>
+      <img 
+        src={require('./christmas-cactus-snoopy.gif')} 
+        className="home-gif" 
+        alt="An animated GIF depicting Snoopy, the Peanuts character, decorating a cactus in blinking Christmas lights." 
+      />
     </div>
   )
 }

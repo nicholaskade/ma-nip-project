@@ -62,9 +62,16 @@ nav.nav-bar {
   height: 100px;
   border: 3px solid #73AD21;
 }
-.homepage{
+
+.homepage {
   display: flex;
-  flex-direction:row;
+  flex-direction: column;
+  align-items: center;
+}
+
+.login {
+  display: flex;
+  margin: 24px 0 0;
 }
 
 #logo {
@@ -98,6 +105,7 @@ nav.nav-bar {
   font-size: 30px;
   color: #8FBC8F
 }
+
 .h1 {
   text-align: center;
   margin: 60px 10px 10px 10px;
@@ -108,7 +116,9 @@ nav.nav-bar {
   color: red;
   font-family: Lato-Light;
   font-size: 40px;
-  margin: 100px 250px 100px 40px;
+  margin: 24px 0;
+  text-align: center;
+  display: flex;
 }
 .h3{
   text-align:center;
@@ -118,10 +128,10 @@ nav.nav-bar {
 .home-gif{
   width: 360px;
   height: auto;
-  position: absolute;
   left: 550px;
   bottom: 5px;
   margin: 0px auto;
+  display: flex;
 }
 
 .cards {

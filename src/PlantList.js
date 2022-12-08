@@ -23,8 +23,8 @@ function PlantList({ plants, userId, likedPlants, setLikedPlants, isLoading }) {
 
   return (
     <div className="cards">
-      {isLoading ? <h1>Loading...</h1> : null}
-
+      {isLoading ?
+      <img src={require('./Io7.gif')} className ="loading-gif" alt="my-gif" /> : null}
       {housePlants}
     </div>
   );
