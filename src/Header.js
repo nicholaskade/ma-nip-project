@@ -12,6 +12,10 @@ function Header() {
             Home
           </Link>
 
+          <Link className="nav-link" to="/PlantPage">
+            Plants
+          </Link>
+
           <Link className="nav-link" to="/MyPlantPage">
             My Plants
           </Link>
@@ -20,9 +24,6 @@ function Header() {
             About
           </Link>
 
-          <Link className="nav-link" to="/PlantPage">
-            Plants
-          </Link>
         </nav>
       </header>
     </div>
