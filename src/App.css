@@ -121,7 +121,9 @@ nav.nav-bar {
   position: absolute;
   left: 550px;
   bottom: 5px;
+  margin: 0px auto;
 }
+
 .cards {
   list-style: none;
 }

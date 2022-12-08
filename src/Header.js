@@ -2,37 +2,31 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 function Header() {
-  
   return (
     <div id="header-container">
-        <header className="header">
+      <header className="header">
+        <img id="logo" src={require("./fern-logo.png")} alt="logo" />
 
-              <img id="logo" src={require("./fern-logo.png")} alt="logo"/>
+        <nav className="nav-bar">
+          <Link className="nav-link" to="/">
+            Home
+          </Link>
 
-              <nav className="nav-bar">
-                
+          <Link className="nav-link" to="/MyPlantPage">
+            My Plants
+          </Link>
 
-                <Link className="nav-link" to="/">
-                  Home
-                </Link>
+          <Link className="nav-link" to="/About">
+            About
+          </Link>
 
-                <Link className="nav-link" to="/MyPlantPage">
-                  My Plants
-                </Link>
-
-                <Link className="nav-link" to="/About">
-                  About
-                </Link>
-
-                <Link className="nav-link" to="/PlantPage">
-                 Plants
-                </Link>
-                
-
-              </nav>
-        </header>
+          <Link className="nav-link" to="/PlantPage">
+            Plants
+          </Link>
+        </nav>
+      </header>
     </div>
   );
-};
+}
 
 export default Header;

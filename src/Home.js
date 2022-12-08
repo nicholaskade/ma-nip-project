@@ -19,14 +19,6 @@ function Home( {
 } ) {
   
 
-  // useEffect(() => {
-  //   if (userId !== "default") {
-  //     fetch(`http://localhost:3002/users`)
-  //     .then(res => res.json())
-  //     .then(res => setMyPlants(res))
-  //   }
-  // }, []);
-
   return (
     <div class="homepage">
       <h2 class="h2">Wishing You<br></br> a Fern-TASTIC <br></br> Holiday Season </h2>
