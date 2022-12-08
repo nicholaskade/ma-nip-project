@@ -17,29 +17,33 @@ function LoginForm( {
   provider
 } ) {
   
-    let activeUsers;
+const [activeUsers, setActiveUsers] = useState([]);
 
     useEffect(() => {
       async function getUsers() {
         await fetch(`http://localhost:3002/users`)
         .then(res => res.json())
-        .then(userData => activeUsers = userData)
-
-        onAuthStateChanged(auth, (user) => {
-            if (user) {
-              unstable_batchedUpdates(() => {
-                setUser(user);
-                setUserId(user.uid);
-                checkUserInfo(user.uid);
-                console.log(user.uid);
-              });
-            } else {
-              setUser(null);
-              setUserId("");
-            };
-          });
+        .then(userData => setActiveUsers(userData))
       };
+
+      function authStateChange() {
+        onAuthStateChanged(auth, (user) => {
+          if (user) {
+            unstable_batchedUpdates(() => {
+              setUser(user);
+              setUserId(user.uid);
+              checkUserInfo(user.uid);
+              console.log(user.uid);
+            });
+          } else {
+            setUser(null);
+            setUserId("");
+          };
+        });
+      };
+
       getUsers();
+      authStateChange();
     }, [])
 
     function checkUserInfo(UID) {

@@ -17,7 +17,7 @@ function MyPlants({ myPlants, userId }) {
     );
   });
 
-  return <div>{renderMyPlants}</div>;
+  return <div className="cards">{renderMyPlants}</div>;
 }
 
 export default MyPlants;

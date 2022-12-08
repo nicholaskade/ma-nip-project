@@ -22,12 +22,8 @@ function MyPlantPage({ userId }) {
     return favorite.plant;
   });
 
-  return (
-    <div>
-        <h1>My Plant Babiesss!</h1>
-        <MyPlants myPlants={filteredPlants} userId={userId} />
-    </div>
-  );
+  return <MyPlants myPlants={filteredPlants} userId={userId} />
+  ;
 }
 
 export default MyPlantPage;

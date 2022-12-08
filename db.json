@@ -1,58 +1,8 @@
 {
   "users": [
     {
-      "id": "NJ1s8WjygCc5T6g38dWq5ilVJ6B3"
-    },
-    {
-      "id": "wdYUJx752Ab5Xl9wHgMC04yjLZ73"
-    },
-    {
       "id": "h0LvWn0qmsfPyvlkH5YmQ3rXVe62"
     }
   ],
-  "favorites": [
-    {
-      "userId": "wdYUJx752Ab5Xl9wHgMC04yjLZ73",
-      "id": "wdYUJx752Ab5Xl9wHgMC04yjLZ73f9772525-ee89-5c23-b377-589e6ac883bc",
-      "plant": {
-        "id": "f9772525-ee89-5c23-b377-589e6ac883bc",
-        "name": "African evergreen",
-        "latinName": "SYNGONIUM PODOPHYLLUM 'WHITE LIGHTNING'",
-        "image": "http://www.tropicopia.com/house-plant/thumbnails/5773.jpg"
-      }
-    },
-    {
-      "userId": "NJ1s8WjygCc5T6g38dWq5ilVJ6B3",
-      "id": "d38db4db-0cdb-5ce3-afd2-e094e3881e28",
-      "plant": {
-        "id": "d38db4db-0cdb-5ce3-afd2-e094e3881e28",
-        "name": "Bamboo palm",
-        "latinName": "CHAMAEDOREA ERUMPENS",
-        "image": "http://www.tropicopia.com/house-plant/thumbnails/5521.jpg",
-        "watering": "Keep moist between watering & Water when soil is half dry"
-      }
-    },
-    {
-      "userId": "h0LvWn0qmsfPyvlkH5YmQ3rXVe62",
-      "id": "h0LvWn0qmsfPyvlkH5YmQ3rXVe62803b56df-248b-5d15-ac76-15404e4b8fe2",
-      "plant": {
-        "id": "803b56df-248b-5d15-ac76-15404e4b8fe2",
-        "name": "Madagascar Palm",
-        "latinName": "PACHYPODIUM GEAYI",
-        "image": "http://www.tropicopia.com/house-plant/thumbnails/5674.jpg",
-        "watering": "Must dry between watering & Water only when dry"
-      }
-    },
-    {
-      "userId": "h0LvWn0qmsfPyvlkH5YmQ3rXVe62",
-      "id": "h0LvWn0qmsfPyvlkH5YmQ3rXVe62f9f0a85e-b32c-529e-8637-6014a5137151",
-      "plant": {
-        "id": "f9f0a85e-b32c-529e-8637-6014a5137151",
-        "name": "Tree-Cereus",
-        "latinName": "CEREUS PERUVIANUS",
-        "image": "http://www.tropicopia.com/house-plant/thumbnails/5513.jpg",
-        "watering": "Water when soil is half dry & Water only when dry"
-      }
-    }
-  ]
+  "favorites": []
 }

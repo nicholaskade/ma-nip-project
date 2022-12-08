@@ -37,8 +37,6 @@ function App() {
   const [userId, setUserId] = useState("");
   const [likedPlants, setLikedPlants] = useState([]);
 
-  console.log(userId);
-
   return (
     <div className="App">
       <Header />
