@@ -16,12 +16,16 @@ function Header() {
                   Home
                 </Link>
 
+                <Link className="nav-link" to="/MyPlantPage">
+                  My Plants
+                </Link>
+
                 <Link className="nav-link" to="/About">
                   About
                 </Link>
 
                 <Link className="nav-link" to="/PlantPage">
-                  Shop Plants
+                 Plants
                 </Link>
                 
 

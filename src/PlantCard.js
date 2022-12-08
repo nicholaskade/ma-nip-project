@@ -1,6 +1,6 @@
 import React,{ useState } from 'react';
 
-function PlantCard( { name, latinName, watering, image, userId, id, setLikedPlants, likedPlants, k } ) {
+function PlantCard( { name, latinName, climate, image, userId, id, setLikedPlants, likedPlants} ) {
 
     console.log(userId);
     
@@ -10,7 +10,7 @@ function PlantCard( { name, latinName, watering, image, userId, id, setLikedPlan
         id: id,
         name: name,
         latinName: latinName,
-        watering: watering,
+        climate: climate,
         image: image,
     };
 
@@ -28,6 +28,7 @@ function PlantCard( { name, latinName, watering, image, userId, id, setLikedPlan
                     'Accept': 'application/json',
                     },
                     body: JSON.stringify({
+                        "userId": userId,
                         "id": userId+id,
                         "plant": currentPlant
                     })
@@ -60,8 +61,8 @@ function PlantCard( { name, latinName, watering, image, userId, id, setLikedPlan
             <img src={image} alt={name}/>
             <p style={titleStyle}>{name}</p>
             <p>{latinName}</p>
-            <p>{watering}</p>
-            <button id={id} onClick={(e) => handleLiked(e)}>{liked ? "♥" : "♡"}</button>
+            <p>{climate}</p>
+            <button id={id} onClick={ (e) => handleLiked(e)}>{liked ? "✅" : "💚"}</button>
        </div>
     )
 };

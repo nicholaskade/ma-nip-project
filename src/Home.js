@@ -1,11 +1,23 @@
 import React from "react";
 import LoginForm from "./LoginForm";
 import {useState, useEffect} from "react";
-import MyPlants from "./MyPlants";
 
-function Home( { firebaseConfig, setUserId, userId } ) {
+
+function Home( { 
+  firebaseConfig, 
+  setUserId, 
+  userId, 
+  setLikedPlants, 
+  likedPlants, 
+  onAuthStateChanged, 
+  user, 
+  setUser, 
+  auth, 
+  signInWithPopup, 
+  signOut,
+  provider 
+} ) {
   
-  const [myPlants, setMyPlants] = useState([]);
 
   // useEffect(() => {
   //   if (userId !== "default") {
@@ -16,10 +28,21 @@ function Home( { firebaseConfig, setUserId, userId } ) {
   // }, []);
 
   return (
-    <div>
-       <LoginForm firebaseConfig={firebaseConfig} setUserId={setUserId}/>
-       <MyPlants myPlants={myPlants} userId={userId}/>
-      <h1>Home!</h1>
+    <div class="homepage">
+      <h2 class="h2">Wishing You<br></br> a Fern-TASTIC <br></br> Holiday Season </h2>
+       <LoginForm 
+       firebaseConfig={firebaseConfig} 
+       setUserId={setUserId}
+       setLikedPlants={setLikedPlants} 
+       likedPlants={likedPlants}
+       onAuthStateChanged={onAuthStateChanged}
+       user={user}
+       setUser={setUser}
+       auth={auth}
+       signInWithPopup={signInWithPopup}
+       signOut={signOut}
+       provider={provider}/>
+       <img src={require('./christmas-cactus-snoopy.gif')} class ="home-gif" alt="my-gif" />
     </div>
   )
 }

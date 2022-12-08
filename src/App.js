@@ -5,6 +5,10 @@ import Home from './Home';
 import About from './About';
 import Header from './Header';
 import PlantPage from "./PlantPage";
+import { initializeApp } from "firebase/app";
+import { getAuth, onAuthStateChanged, GoogleAuthProvider, signInWithPopup, signOut } from "firebase/auth";
+// import MyPlants from "./MyPlants";
+import MyPlantPage from "./MyPlantPage";
 
 const firebaseConfig = {
   apiKey: "AIzaSyAWmawGApht_8mW5qaObm5vCjwKVrQT3no",
@@ -17,6 +21,14 @@ const firebaseConfig = {
 };
 
 function App() {
+
+  initializeApp(firebaseConfig);
+  const firebaseApp = initializeApp(firebaseConfig);
+  const provider = new GoogleAuthProvider();
+
+  const auth = getAuth(firebaseApp);
+
+  const [user, setUser] = useState(false);
   const [userId, setUserId] = useState("");
   const [likedPlants, setLikedPlants] = useState([]);
 
@@ -33,8 +45,25 @@ function App() {
                   <PlantPage userId={userId} setLikedPlants={setLikedPlants} likedPlants={likedPlants}/>
                 </Route>
 
+                <Route path="/MyPlantPage">
+                  <MyPlantPage/>
+                </Route>
+
                 <Route path="/">
-                  <Home firebaseConfig={firebaseConfig} setUserId={setUserId} userId={userId} setLikedPlants={setLikedPlants} likedPlants={likedPlants}/>
+                  <Home 
+                  firebaseConfig={firebaseConfig} 
+                  setUserId={setUserId} 
+                  userId={userId} 
+                  setLikedPlants={setLikedPlants} 
+                  likedPlants={likedPlants}
+                  onAuthStateChanged={onAuthStateChanged}
+                  user={user}
+                  setUser={setUser}
+                  auth={auth}
+                  signInWithPopup={signInWithPopup}
+                  signOut={signOut}
+                  provider={provider}
+                  />
                 </Route>
                 
             </Switch>

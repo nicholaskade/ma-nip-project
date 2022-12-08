@@ -11,6 +11,7 @@ const renderMyPlants = myPlants.map((plant) => {
       name={plant.name}
       latinName={plant.latinName}
       watering={plant.watering}
+      climate={plant.climat}
       image={plant.image}
       userId={userId}
       />

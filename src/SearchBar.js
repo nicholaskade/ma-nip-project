@@ -6,7 +6,8 @@ function SearchBar( { plantQuery, setPlantQuery } ) {
             <form>
                 <input 
                     type="text" 
-                    id="search-bar" 
+                    id="search-bar"
+                    placeholder="🔍       Search Plants"
                     value={plantQuery} 
                     onChange={(e) => setPlantQuery(e.target.value)}
                 />

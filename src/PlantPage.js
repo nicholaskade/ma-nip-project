@@ -11,7 +11,10 @@ function PlantPage( { userId, setLikedPlants, likedPlants } ){
     const filteredPlants = plants.filter(plant => {
         if (plants.length > 0 && plant["Common name"] !== null) {
             return plant.Categories.toLowerCase().includes(plantQuery.toLowerCase()) || plant["Common name"][0].toLowerCase().includes(plantQuery.toLowerCase())
-        };
+        }
+        if (plants.length > 0 && plant["Color of leaf"] !== null) {
+            return plant.Categories.toLowerCase().includes(plantQuery.toLowerCase()) || plant["Color of leaf"][0].toLowerCase().includes(plantQuery.toLowerCase())
+        }
     });
 
     useEffect(() => {
