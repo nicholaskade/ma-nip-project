@@ -1,3 +1,4 @@
+import { render } from "@testing-library/react";
 import React, { useState } from "react";
 
 function PlantCard({
@@ -8,9 +9,12 @@ function PlantCard({
   userId,
   id,
   watering,
+  categories,
   setLikedPlants,
   likedPlants
 }) {
+
+  console.log(categories)
     
 const [liked, setLiked] = useState(false);
 
@@ -26,6 +30,16 @@ const [liked, setLiked] = useState(false);
   const titleStyle = {
     fontSize: "x-large",
   };
+
+  function renderWatering(categories){
+    if(categories === "Cactus & Succulent"){
+    return "12-15 Days"
+  } if (categories === "Palm") {
+    return "8-10 Days"
+  } else {
+    return "5-7 Days"
+  }
+}
 
   function handleLiked(e) {
     e.preventDefault();
@@ -63,6 +77,7 @@ const [liked, setLiked] = useState(false);
       setLiked(!liked);
     }
   }
+ 
 
   return (
     <div className="card">
@@ -70,7 +85,7 @@ const [liked, setLiked] = useState(false);
       <p style={titleStyle}>{name}</p>
       <p>{latinName}</p>
       <p>{climate}</p>
-      <p>{watering}</p>
+      <h3>💧{renderWatering(categories)}</h3>
       <button id={id} onClick={(e) => handleLiked(e)}>
         {liked ? "✅" : "💚"}
       </button>

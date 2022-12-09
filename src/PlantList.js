@@ -12,6 +12,7 @@ function PlantList({ plants, userId, likedPlants, setLikedPlants, isLoading }) {
             climate={housePlants.climate}
             image={housePlants.img}
             watering={housePlants.Watering}
+            categories={housePlants.Categories}
             id={housePlants.id}
             userId={userId}
             setLikedPlants={setLikedPlants}

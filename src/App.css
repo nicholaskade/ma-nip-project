@@ -160,6 +160,12 @@ nav.nav-bar {
   font-family: Bitter;
   box-shadow: 6px 6px 8px #8FBC8F;
   position: relative;
+  border-radius: 62px;
+  border-radius: 62px;
+  border-radius: 62px;
+  background: linear-gradient(145deg, #bee4cd, #e2fff4);
+  box-shadow:  17px 17px 33px #677c70,
+             -17px -17px 33px #ffffff;
 }
 .card p {
   margin: 8px 12px;
@@ -167,6 +173,7 @@ nav.nav-bar {
 .card img {
   position: relative;
   box-shadow: 6px 6px 8px #8FBC8F;
+  margin: 50px 10px 10px 10px;
 }
 .card button {
   margin-top: 0.5rem;
