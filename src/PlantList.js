@@ -9,7 +9,7 @@ function PlantList({ plants, userId, likedPlants, setLikedPlants, isLoading }) {
             key={housePlants.id}
             name={housePlants["Common name"][0]}
             latinName={housePlants["Latin name"].toUpperCase()}
-            climate={housePlants.climate}
+            climate={housePlants.Climat}
             image={housePlants.img}
             watering={housePlants.Watering}
             categories={housePlants.Categories}

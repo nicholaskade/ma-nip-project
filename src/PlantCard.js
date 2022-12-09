@@ -24,7 +24,7 @@ const [liked, setLiked] = useState(false);
     latinName: latinName,
     climate: climate,
     image: image,
-    watering: watering,
+    watering: watering
   };
 
   const titleStyle = {
@@ -43,7 +43,7 @@ const [liked, setLiked] = useState(false);
 
   function handleLiked(e) {
     e.preventDefault();
-    if (liked === false) {
+    if (liked === false && userId !== "") {
       let postRequest = {
         method: "POST",
         headers: {
@@ -60,7 +60,7 @@ const [liked, setLiked] = useState(false);
         .then((res) => res.json())
         .then((res) => console.log(res));
       setLiked(!liked);
-    } else {
+    } else if (userId !== "") {
       let deleteRequest = {
         method: "DELETE",
         headers: {
@@ -75,8 +75,10 @@ const [liked, setLiked] = useState(false);
           console.log(res);
         });
       setLiked(!liked);
-    }
-  }
+    } else {
+        alert("Please sign in with your Google account to add plants to your favorites.");
+    };
+  };
  
 
   return (
@@ -84,8 +86,9 @@ const [liked, setLiked] = useState(false);
       <img src={image} alt={name} />
       <p style={titleStyle}>{name}</p>
       <p>{latinName}</p>
-      <p>{climate}</p>
-      <h3>💧{renderWatering(categories)}</h3>
+      <p>🌱 Category: {categories}</p>
+      <p>🌡️ Climate: {climate}</p>
+      <p>💧 Watering Cadence: {renderWatering(categories)}</p>
       <button id={id} onClick={(e) => handleLiked(e)}>
         {liked ? "✅" : "💚"}
       </button>

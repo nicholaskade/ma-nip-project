@@ -3,9 +3,9 @@ import React from "react";
 function About() {
   return (
     <div>
-      <h1 class="h1">Start building your home greenhouse today! </h1>
+      <h1 className="h1">Start building your home greenhouse today! </h1>
 
-      <h3 class="h3">
+      <h3 className="h3">
         At Fern, our mission is to inspire green spaces by connecting people
         with plants.
         <br></br>
@@ -14,7 +14,7 @@ function About() {
         <br></br>
         Through Fern, you can keep your plants happy and healthy with our
         easy-to-use personalized plant care guide.
-        <img src={require("./giphy.gif")} class="home-gif" alt="my-gif" />
+        <img src={require("./giphy.gif")} className="home-gif" alt="my-gif" />
       </h3>
     </div>
   );

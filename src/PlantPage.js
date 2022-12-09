@@ -10,18 +10,11 @@ function PlantPage({ userId, setLikedPlants, likedPlants }) {
   const [isLoading, setIsLoading] = useState(false);
 
   const filteredPlants = plants.filter((plant) => {
+    console.log(plant["Latin name"]);
     if (plants.length > 0 && plant["Common name"] !== null) {
       return (
         plant.Categories.toLowerCase().includes(plantQuery.toLowerCase()) ||
         plant["Common name"][0].toLowerCase().includes(plantQuery.toLowerCase())
-      );
-    }
-    if (plants.length > 0 && plant["Color of leaf"] !== null) {
-      return (
-        plant.Categories.toLowerCase().includes(plantQuery.toLowerCase()) ||
-        plant["Color of leaf"][0]
-          .toLowerCase()
-          .includes(plantQuery.toLowerCase())
       );
     }
   });
@@ -48,7 +41,7 @@ function PlantPage({ userId, setLikedPlants, likedPlants }) {
     if (a["Common name"] === b["Common name"]) {
       return 0;
     }
-  }
+  };
 
   return (
     <main>

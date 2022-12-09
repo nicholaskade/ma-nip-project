@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react'
-import { unstable_batchedUpdates } from 'react-dom';
 import './App.css';
 
 function LoginForm( { 
@@ -25,7 +24,11 @@ function LoginForm( {
     .then(userData => setActiveUsers(userData));
   };
 
-  useEffect(() => {  
+  useEffect(() => {
+    if (userId === undefined) {
+      signOut(auth);
+    };
+    
     onAuthStateChanged(auth, (user) => {
       if (user) {
           setUser(user);
@@ -79,21 +82,8 @@ function LoginForm( {
                           setUserId(user.uid);
                           checkUserInfo(user.uid);
                           getUsers();
-                          console.log(`Active Users after Sign In:` + activeUsers);
-                      // ...
-                        }).catch((error) => {
-                        // Handle Errors here.
-                        // eslint-disable-next-line
-                        const errorCode = error.code;
-                        // eslint-disable-next-line
-                        const errorMessage = error.message;
-                        // The email of the user's account used.
-                        // eslint-disable-next-line
-                        const email = error.email;
-                        // The AuthCredential type that was used.
-                        // eslint-disable-next-line
-                        const credential = GoogleAuthProvider.credentialFromError(error);
-                        // ...
+                        }).catch(() => {
+                          alert("There was an error with signing into your Google account. Please try again.");
                         })}
                     >
                       Sign in with Google

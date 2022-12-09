@@ -4,6 +4,7 @@ import PlantCard from "./PlantCard";
 function MyPlants({ myPlants, userId }) {
 
   const renderMyPlants = myPlants.map((plant) => {
+    console.log(plant);
     return (
       <PlantCard
         key={plant.id}
@@ -14,6 +15,7 @@ function MyPlants({ myPlants, userId }) {
         climate={plant.climat}
         image={plant.image}
         userId={userId}
+        categories={plant.Categories}
       />
     );
   });

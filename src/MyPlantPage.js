@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import MyPlants from "./MyPlants";
 
 function MyPlantPage({ userId }) {
+    console.log(userId);
   const [favorites, setFavorites] = useState([]);
 
   useEffect(() => {

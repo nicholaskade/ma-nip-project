@@ -37,7 +37,6 @@ body {
 nav.nav-bar {
   display: flex;
   flex-direction: row;
-  justify-content: space-around;
   border: 2px solid white;
   font-size: 25px;
   font-family: Lato;
@@ -59,10 +58,21 @@ nav.nav-bar {
   align-items: center;
 }
 
+#link-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 100%;
+  justify-content: space-between;
+}
+
+.card button {
+  margin: 0 0 16px;
+}
+
 #login-container button {
   border: none;
   border-radius: 8px;
-  height: 75%;
   background-color: #1E7C04;
   color: white;
   font-family: Bitter;
