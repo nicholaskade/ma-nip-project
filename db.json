@@ -1,8 +1,37 @@
 {
   "users": [
     {
+      "id": "NJ1s8WjygCc5T6g38dWq5ilVJ6B3"
+    },
+    {
       "id": "h0LvWn0qmsfPyvlkH5YmQ3rXVe62"
+    },
+    {
+      "id": "rCHBT32YANNme4640wOZy7gcNSO2"
     }
   ],
-  "favorites": []
+  "favorites": [
+    {
+      "userId": "",
+      "id": "55a0e4fa-0717-521d-9671-0fc9095f2055",
+      "plant": {
+        "id": "55a0e4fa-0717-521d-9671-0fc9095f2055",
+        "name": "Elephant ear",
+        "latinName": "ALOCASIA X AMAZONICA",
+        "image": "http://www.tropicopia.com/house-plant/thumbnails/5486.jpg",
+        "watering": "Keep moist between watering & Water when soil is half dry"
+      }
+    },
+    {
+      "userId": "",
+      "id": "d38db4db-0cdb-5ce3-afd2-e094e3881e28",
+      "plant": {
+        "id": "d38db4db-0cdb-5ce3-afd2-e094e3881e28",
+        "name": "Bamboo palm",
+        "latinName": "CHAMAEDOREA ERUMPENS",
+        "image": "http://www.tropicopia.com/house-plant/thumbnails/5521.jpg",
+        "watering": "Keep moist between watering & Water when soil is half dry"
+      }
+    }
+  ]
 }

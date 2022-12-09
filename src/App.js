@@ -39,7 +39,20 @@ function App() {
 
   return (
     <div className="App">
-      <Header />
+      <Header 
+        firebaseConfig={firebaseConfig}
+        setUserId={setUserId}
+        userId={userId}
+        setLikedPlants={setLikedPlants}
+        likedPlants={likedPlants}
+        onAuthStateChanged={onAuthStateChanged}
+        user={user}
+        setUser={setUser}
+        auth={auth}
+        signInWithPopup={signInWithPopup}
+        signOut={signOut}
+        provider={provider}
+      />
       <Switch>
         <Route path="/About">
           <About />
@@ -60,20 +73,7 @@ function App() {
         </Route>
 
         <Route path="/">
-          <Home
-            firebaseConfig={firebaseConfig}
-            setUserId={setUserId}
-            userId={userId}
-            setLikedPlants={setLikedPlants}
-            likedPlants={likedPlants}
-            onAuthStateChanged={onAuthStateChanged}
-            user={user}
-            setUser={setUser}
-            auth={auth}
-            signInWithPopup={signInWithPopup}
-            signOut={signOut}
-            provider={provider}
-          />
+          <Home/>
         </Route>
       </Switch>
     </div>

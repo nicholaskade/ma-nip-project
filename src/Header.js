@@ -1,7 +1,21 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import LoginForm from "./LoginForm";
 
-function Header() {
+function Header({
+  firebaseConfig, 
+  setUserId, 
+  userId, 
+  setLikedPlants, 
+  likedPlants, 
+  onAuthStateChanged, 
+  user, 
+  setUser, 
+  auth, 
+  signInWithPopup, 
+  signOut,
+  provider 
+}) {
   return (
     <div id="header-container">
       <header className="header">
@@ -23,6 +37,20 @@ function Header() {
           <Link className="nav-link" to="/About">
             About
           </Link>
+
+          <LoginForm 
+            firebaseConfig={firebaseConfig} 
+            setUserId={setUserId}
+            setLikedPlants={setLikedPlants} 
+            likedPlants={likedPlants}
+            onAuthStateChanged={onAuthStateChanged}
+            user={user}
+            setUser={setUser}
+            auth={auth}
+            signInWithPopup={signInWithPopup}
+            signOut={signOut}
+            provider={provider}
+          />
 
         </nav>
       </header>

@@ -23,7 +23,6 @@ function MyPlantPage({ userId }) {
   });
 
   return <MyPlants myPlants={filteredPlants} userId={userId} />
-  ;
 }
 
 export default MyPlantPage;

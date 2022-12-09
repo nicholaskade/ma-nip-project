@@ -9,11 +9,10 @@ function PlantCard({
   id,
   watering,
   setLikedPlants,
-  likedPlants,
+  likedPlants
 }) {
-  console.log(userId);
-
-  const [liked, setLiked] = useState(false);
+    
+const [liked, setLiked] = useState(false);
 
   let currentPlant = {
     id: id,
