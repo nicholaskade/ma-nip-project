@@ -7,14 +7,15 @@
   "favorites": [
     {
       "userId": "NJ1s8WjygCc5T6g38dWq5ilVJ6B3",
-      "id": "NJ1s8WjygCc5T6g38dWq5ilVJ6B33d49c8bc-0f49-548c-a2e0-9b0e0db2ca09",
+      "id": "NJ1s8WjygCc5T6g38dWq5ilVJ6B3d38db4db-0cdb-5ce3-afd2-e094e3881e28",
       "plant": {
-        "id": "3d49c8bc-0f49-548c-a2e0-9b0e0db2ca09",
-        "name": "Bird nest Anthurium",
-        "latinName": "ANTHURIUM HOOKERI",
-        "climate": "Tropical humid",
-        "image": "http://www.tropicopia.com/house-plant/thumbnails/5489.jpg",
-        "watering": "Water when soil is half dry & Can dry between watering"
+        "id": "d38db4db-0cdb-5ce3-afd2-e094e3881e28",
+        "name": "Bamboo palm",
+        "latinName": "CHAMAEDOREA ERUMPENS",
+        "Climat": "Tropical",
+        "image": "http://www.tropicopia.com/house-plant/thumbnails/5521.jpg",
+        "watering": "Keep moist between watering & Water when soil is half dry",
+        "Categories": "Palm"
       }
     }
   ]

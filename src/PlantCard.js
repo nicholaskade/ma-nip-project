@@ -22,9 +22,10 @@ const [liked, setLiked] = useState(false);
     id: id,
     name: name,
     latinName: latinName,
-    climate: climate,
+    Climat: climate,
     image: image,
-    watering: watering
+    watering: watering,
+    Categories: categories
   };
 
   const titleStyle = {
@@ -94,6 +95,6 @@ const [liked, setLiked] = useState(false);
       </button>
     </div>
   );
-}
+};
 
 export default PlantCard;

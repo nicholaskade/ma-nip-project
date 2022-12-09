@@ -12,7 +12,7 @@ function MyPlants({ myPlants, userId }) {
         name={plant.name}
         latinName={plant.latinName}
         watering={plant.watering}
-        climate={plant.climat}
+        climate={plant.Climat}
         image={plant.image}
         userId={userId}
         categories={plant.Categories}
